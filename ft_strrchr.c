@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 12:02:03 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/09 12:59:10 by ktuncbil         ###   ########.fr       */
+/*   Created: 2022/02/09 17:12:26 by ktuncbil          #+#    #+#             */
+/*   Updated: 2022/02/10 03:54:23 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strrchr(const char *str, int c)
 {
 	size_t	i;
+	char	*start;
 
-	if (!dest && !src)
-		return (0);
-	i = 0;
-	if ((size_t)dest - (size_t)src < len)
-	{
-		i = len - 1;
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i--;
-		}
-	}
-	else
-	{
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return (dest);
+	start = str;
+	i = ft_strlen(str);
+	str += i;
+	while (*str != *start && c != *str)
+		str--;
+	if (c == *str)
+		return ((char *)str);
+	return (0);
 }

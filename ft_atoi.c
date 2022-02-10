@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 12:02:03 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/09 12:59:10 by ktuncbil         ###   ########.fr       */
+/*   Created: 2022/02/09 21:26:48 by ktuncbil          #+#    #+#             */
+/*   Updated: 2022/02/10 03:41:34 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
+	int	i;
+	int	sign;
+	int	tmp;
 
-	if (!dest && !src)
-		return (0);
 	i = 0;
-	if ((size_t)dest - (size_t)src < len)
+	sign = 1;
+	tmp = 0;
+	if (!str)
+		return (0);
+	while (str[i] == ' ' || str[i] == '\r' || str[i] == '\t'
+		|| str[i] == '\n' || str[i] == '\v' || str[i] == '\f')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		i = len - 1;
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i--;
-		}
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	else
+	while (ft_isdigit(str[i]))
 	{
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
+		tmp = tmp * 10 + str[i] - 48;
+		i++;
 	}
-	return (dest);
+	return (tmp * sign);
 }

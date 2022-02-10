@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 12:02:03 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/09 12:59:10 by ktuncbil         ###   ########.fr       */
+/*   Created: 2022/02/09 19:20:34 by ktuncbil          #+#    #+#             */
+/*   Updated: 2022/02/10 03:49:52 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strstr(const char *str1, const char *str2)
 {
-	size_t	i;
+	int	i;
+	int	j;
 
-	if (!dest && !src)
-		return (0);
 	i = 0;
-	if ((size_t)dest - (size_t)src < len)
+	if (str2[0] == '\0')
+		return ((char *)str1);
+	while (str1[i] != '\0')
 	{
-		i = len - 1;
-		while (i < len)
+		j = 0;
+		while (str1[i + j] == str2[j] && str1[i + j] != '\0')
 		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i--;
+			if (str2[j + 1] == '\0')
+				return ((char *)&str1[i]);
+			j++;
 		}
+		i++;
 	}
-	else
-	{
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return (dest);
+	return (0);
 }

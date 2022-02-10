@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 12:02:03 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/09 12:59:10 by ktuncbil         ###   ########.fr       */
+/*   Created: 2022/02/09 23:40:36 by ktuncbil          #+#    #+#             */
+/*   Updated: 2022/02/10 07:56:08 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
+	size_t	j;
+	size_t	ttl_size;
+	char	*arr;
 
-	if (!dest && !src)
-		return (0);
+	ttl_size = sizeof(s1) + sizeof(s2);
+	arr = (char *) malloc(sizeof(char) * (ttl_size + 1));
+	if (!s1 || !s2 || arr == NULL)
+		return (NULL);
 	i = 0;
-	if ((size_t)dest - (size_t)src < len)
+	j = 0;
+	while (s1[j] != '\0')
 	{
-		i = len - 1;
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i--;
-		}
+		arr[i++] = s1[j];
+		j++;
 	}
-	else
+	j = 0;
+	while (s2[j] != '\0')
 	{
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
+		arr[i++] = s2[j];
+		j++;
 	}
-	return (dest);
+	arr[i] = '\0';
+	return (arr);
 }
