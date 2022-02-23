@@ -6,7 +6,7 @@
 /*   By: ktuncbil <ktuncbil@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:03:48 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/23 21:57:21 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/23 22:02:13 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,12 @@ void	reverse(char *str, int length)
 
 char	*ft_itoa(int n)
 {
-	int	a;
+	char *num;
+
+	if (n == 0)
+	{
+		num[0] = '0';
+		num[1] = '\0';
+	}
+	
 }
