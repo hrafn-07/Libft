@@ -3,38 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktuncbil <ktuncbil@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:03:48 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/23 22:02:13 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/25 11:46:23 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	reverse(char *str, int length)
+int	ft_numlen(int n, int base)
 {
-	int	start;
-	int	end;
+	int	count;
 
-	start = 0;
-	end = length - 1;
-	while (start < end)
-	{
-		swap(*(str + start), *(str + end));
-		start++;
-		end--;
-	}
+	count = 0;
+	if (n <= 0)
+		++count;
+	while (n && ++count)
+		n /= base;
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
-	char *num;
+	int			len;
+	char		*ret;
+	const char	*digits;
 
+	digits = "0123456789";
+	len = ft_numlen(n, 10);
+	ret = malloc(sizeof(char) * (len + 1));
+	if (!ret)
+		return (0);
+	ret[len] = 0;
 	if (n == 0)
+		ret[0] = '0';
+	if (n < 0)
+	ret[0] = '-';
+	while (n)
 	{
-		num[0] = '0';
-		num[1] = '\0';
+		if (n > 0)
+			ret[--len] = digits[n % 10];
+		else
+			ret[--len] = digits[n % 10 * -1];
+		n /= 10;
 	}
-	
+	return (ret);
 }
