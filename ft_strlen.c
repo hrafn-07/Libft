@@ -6,13 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:54:47 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 19:07:55 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:17:47 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	count;
 
@@ -21,5 +21,5 @@ size_t			ft_strlen(const char *s)
 	{
 		count++;
 	}
-	return (count + 1);
+	return (count - 1);
 }
