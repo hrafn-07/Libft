@@ -6,14 +6,15 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 07:12:47 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/01 07:18:09 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:09:36 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_toupper(int num)
+int	ft_tolower(int c)
 {
-	if (num >= 'A' && num <= 'Z')
-		num += 32;
-	return (num);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

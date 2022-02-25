@@ -6,29 +6,35 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:31 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/10 03:56:21 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:01:52 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t d_size)
+size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 {
-	size_t	src_size;
-	size_t	i;
+	size_t	k;
+	size_t	l;
+	size_t	src_len;
+	size_t	dest_len;
 
-	if (!dest || !src)
-		return (0);
-	src_size = ft_strlen(src);
-	i = 0;
-	if (d_size != 0)
+	l = 0;
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	if (destsize == 0)
+		return (src_len);
+	if (destsize < dest_len)
+		return (src_len + destsize);
+	else
 	{
-		while (src[i] != '\0' && i < (d_size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		k = dest_len;
+		while (src[l] && (dest_len + l) < destsize)
+			dest[k++] = src[l++];
+		if ((dest_len + l) == destsize && dest_len < destsize)
+			dest[--k] = '\0';
+		else
+			dest[k] = '\0';
+		return (src_len + dest_len);
 	}
-	return (dest);
 }

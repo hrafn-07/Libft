@@ -6,44 +6,36 @@
 #    By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/10 08:32:53 by ktuncbil          #+#    #+#              #
-#    Updated: 2022/02/10 08:33:05 by ktuncbil         ###   ########.fr        #
+#    Updated: 2022/02/25 19:02:22 by ktuncbil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
-					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
-					ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
-					ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_memccpy.c \
-					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
-					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
-					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c
-OBJS			= $(SRCS:.c=.o)
+NAME = libft.a
+CC = gcc
+FLAGS = -Wall -Wextra -Werror
 
-BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
-					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-					ft_lstmap.c ft_lstnew.c ft_lstsize.c
-BONUS_OBJS		= $(BONUS:.c=.o)
+SRC = $(shell find . -type f ! -name "ft_lst*.c" -name "ft_*.c")
 
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+OBJ = $(SRC:.c=.o)
+BSRC	= $(wildcard ft_lst*.c)
+B_OBJ	= $(BSRC:.c=.o)
 
-NAME			= libft.a
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
 
-all:			$(NAME)
+$(NAME): $(OBJ)
+		ar -rc $(NAME) $(OBJ)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+all: $(NAME)
 
-clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+bonus: $(OBJ) $(B_OBJ)
+	ar -rc $(NAME) $(OBJ) $(B_OBJ)
+clean: 
+	rm -f *.o
 
-fclean:			clean
-				$(RM) $(NAME)
+fclean: clean
+		rm -f $(NAME)
 
-re:				fclean $(NAME)
+re: fclean all
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-.PHONY:			all clean fclean re bonus
+.PHONY: all bonus clean fclean re

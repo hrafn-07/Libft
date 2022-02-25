@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 13:14:12 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 19:00:11 by ktuncbil         ###   ########.fr       */
+/*   Created: 2022/02/25 18:34:31 by ktuncbil          #+#    #+#             */
+/*   Updated: 2022/02/25 18:41:14 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else if (c >= 'a' && c <= 'z')
-		return (1);
-	else if (c >= 'A' && c <= 'Z')
-		return (1);
-	else
-		return (0);
+	t_list	*first;
+	t_list	*new;
+
+	if (lst == NULL || f == NULL)
+		return (NULL);
+	first = NULL;
+	while (lst)
+	{
+		new = ft_lstnew((*f)(lst->content));
+		if (!new)
+		{
+			ft_lstclear(&first, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&first, new);
+		lst = lst->next;
+	}
+	return (first);
 }
