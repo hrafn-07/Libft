@@ -6,11 +6,14 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 18:30:15 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/10 04:04:44 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 18:04:29 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*Searches for the first occurrence of the character c in the
+first n bytes of the string pointed to, return the address*/
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -6,11 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:03:48 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 11:46:23 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 17:17:30 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//Coverts the integer n into a character string.
 
 int	ft_numlen(int n, int base)
 {

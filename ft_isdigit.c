@@ -6,11 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:58:55 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 19:03:03 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 17:15:29 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//Takes a single argument of an integer and returns the value of type int.
 
 int	ft_isdigit(int c)
 {

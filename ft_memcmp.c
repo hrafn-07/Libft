@@ -6,11 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 04:05:22 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/10 04:06:01 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 18:12:18 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//Compares the first n bytes of memory area str1 and memory area str2.
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

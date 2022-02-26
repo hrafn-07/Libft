@@ -6,13 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 15:22:22 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 15:40:59 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 17:57:33 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//create new list
+//create new list member
 
 t_list	*ft_lstnew(void *content)
 {

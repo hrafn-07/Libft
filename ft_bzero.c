@@ -6,11 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 07:11:21 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/01 07:13:35 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 17:06:59 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//Erases the data.
 
 void	ft_bzero(void *s, size_t n)
 {

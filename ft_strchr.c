@@ -6,7 +6,7 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:10:11 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/09 17:17:51 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 16:49:32 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	while (*str != '\0' && c != *str)
+	while ((char)c != *str)
+	{
+		if (!*str)
+			return (0);
 		str++;
-	if (c == *str)
-		return ((char *)str);
-	return (0);
+	}
+	return ((char *)str);
 }

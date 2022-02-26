@@ -6,11 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 18:34:31 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 18:41:14 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 17:50:47 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//Makes "f" function to all lists components and it makes a new list of maked.
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 {

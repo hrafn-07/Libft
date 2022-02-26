@@ -6,9 +6,11 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:50:17 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/26 14:58:28 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 17:10:50 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Checks whether a character is an alphabet or not.
 
 int	ft_isalpha(int c)
 {
