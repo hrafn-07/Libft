@@ -6,7 +6,7 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 22:40:41 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/10 03:49:03 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 16:02:28 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*arr;
+	char	*str;
 	size_t	i;
 
-	if ((start + (int)len) > ft_strlen(s))
+	if (!s)
+		return (NULL);
+	i = ft_strlen(s) - start;
+	if (len < i)
+		i = len;
+	if (start > ft_strlen(s) - 1)
+		return (ft_strdup(""));
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (0);
-	arr = (char *) malloc(sizeof(char) *(len + 1));
-	if (arr == NULL)
-		return (0);
-	i = 0;
-	while (i < len)
-	{
-		*(arr + i) = *(s + start);
-		s++;
-		i++;
-	}
-	*(arr + i) = '\0';
-	return (arr);
+	ft_strlcpy(str, s + start, i + 1);
+	return (str);
 }

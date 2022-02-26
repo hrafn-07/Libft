@@ -6,14 +6,15 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:33:06 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/01 07:16:37 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 15:02:20 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_isascii(int num)
+int	ft_isascii(int c)
 {
-	if (num < 128)
+	if (c > -1 && c < 128)
 		return (1);
 	else
 		return (0);

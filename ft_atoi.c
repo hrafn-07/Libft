@@ -6,7 +6,7 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 21:26:48 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/10 03:41:34 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 15:12:00 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,24 @@
 int	ft_atoi(const char *str)
 {
 	int	i;
-	int	sign;
-	int	tmp;
+	int	res;
+	int	pn;
 
+	pn = 1;
 	i = 0;
-	sign = 1;
-	tmp = 0;
-	if (!str)
-		return (0);
-	while (str[i] == ' ' || str[i] == '\r' || str[i] == '\t'
-		|| str[i] == '\n' || str[i] == '\v' || str[i] == '\f')
+	res = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			sign *= -1;
+			pn = -1;
 		i++;
 	}
-	while (ft_isdigit(str[i]))
+	while (str[i] >= 48 && str[i] <= '9' && str[i])
 	{
-		tmp = tmp * 10 + str[i] - 48;
+		res = (str[i] - 48) + (res * 10);
 		i++;
 	}
-	return (tmp * sign);
+	return (pn * res);
 }

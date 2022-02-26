@@ -6,7 +6,7 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:54:47 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 19:17:47 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/26 14:56:34 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	while (s[count] == '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		count++;
+		i++;
 	}
-	return (count - 1);
+	return (i);
 }
