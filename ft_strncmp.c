@@ -6,11 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 12:11:47 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 12:14:36 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/27 13:01:58 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//Compares a specified number of characters of two null terminating strings.
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

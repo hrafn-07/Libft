@@ -6,12 +6,15 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 03:51:04 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/10 08:27:07 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/27 14:32:55 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//LOOK THIS!!!
+
+/*Returns a copy of ’s1’ with the characters specified in ’set’ removed from the
+beginning and the end of the string.*/
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;

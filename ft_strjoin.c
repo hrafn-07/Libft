@@ -6,11 +6,14 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 23:40:36 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/10 07:56:08 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/27 12:33:51 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*Allocates and returns a new string, which is the result of 
+the concatenation of ’s1’ and ’s2’*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -19,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	ttl_size;
 	char	*arr;
 
-	ttl_size = sizeof(s1) + sizeof(s2);
+	ttl_size = ft_strlen(s1) + ft_strlen(s2);
 	arr = (char *) malloc(sizeof(char) * (ttl_size + 1));
 	if (!s1 || !s2 || arr == NULL)
 		return (NULL);

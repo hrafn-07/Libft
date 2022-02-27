@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktuncbil <ktuncbil@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 20:10:51 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/23 20:35:49 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/27 11:59:34 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *str, char c)
+/*Returns an array of strings obtained by splitting ’s’ using the character 
+’c’ as a delimiter.*/
+
+static int	ft_c_words(char const *str, char c)
 {
 	int	i;
 	int	c_word;
@@ -84,7 +87,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	c_words = ft_count_words(s, c);
+	c_words = ft_c_words(s, c);
 	s2 = (char **)malloc(sizeof(char *) * (c_words + 1));
 	if (!s2)
 		return (0);

@@ -6,11 +6,13 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:14:31 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/25 19:01:52 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/27 12:37:15 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//Copy and concatenate strings respectively.
 
 size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 {
