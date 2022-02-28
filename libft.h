@@ -6,7 +6,7 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 00:59:26 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/27 14:58:46 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:21:45 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,34 +89,5 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
-
-/*
-** Extra functions
-*/
-
-void			ft_swap(int *a, int *b);
-
-int				ft_islower(int c);
-int				ft_isupper(int c);
-int				ft_iscntrl(int c);
-int				ft_isgraph(int c);
-int				ft_ispunct(int c);
-int				ft_isspace(int c);
-int				ft_isblank(int c);
-int				ft_isxdigit(int c);
-
-void			ft_putchar(char c);
-void			ft_putstr(char *str);
-void			ft_putendl(char *s);
-void			ft_putnbr(int n);
-double			ft_sqrt(double x);
-
-int				ft_strcmp(const char *s1, const char *s2);
-char			*ft_strcpy(char *dst, const char *src);
-char			*ft_strncpy(char *dst, const char *src, size_t len);
-char			*ft_strcat(char *s1, const char *s2);
-char			*ft_strncat(char *s1, const char *s2, size_t n);
-char			*ft_strstr(const char *haystack, const char *needle);
-char			*ft_strndup(const char *s1, size_t n);
 
 #endif

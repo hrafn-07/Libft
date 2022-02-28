@@ -6,7 +6,7 @@
 /*   By: ktuncbil <ktuncbil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 12:32:52 by ktuncbil          #+#    #+#             */
-/*   Updated: 2022/02/26 18:37:31 by ktuncbil         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:19:39 by ktuncbil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	if (s != NULL)
+		write(fd, s, ft_strlen(s));
 }
